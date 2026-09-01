@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1a1c1e;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes hero-image-drift {
+  0%, 100% { transform: scale(1.02) translate3d(0, 0, 0); }
+  50% { transform: scale(1.1) translate3d(-1.2%, -0.8%, 0); }
+}
+
+@keyframes hero-image-glow {
+  0%, 100% { opacity: 0.2; transform: scale(0.96); }
+  50% { opacity: 0.48; transform: scale(1.08); }
+}
+
+section {
+  animation: rise-in 0.8s ease both;
+}
+
+section img {
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.7s ease;
+}
+
+section img:hover {
+  transform: scale(1.035);
+  filter: saturate(1.08);
+}
+
+.solar-grid {
+  background-image: linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px);
+  background-size: 34px 34px;
+  transform: perspective(500px) rotateX(55deg) scale(1.4) translateY(25%);
+}
+
+.hero-image {
+  animation: hero-image-drift 14s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 16, 12, 0.18), transparent 38%, rgba(255, 191, 64, 0.1));
+  content: '';
+  pointer-events: none;
+}
+
+.hero-image-glow {
+  background: radial-gradient(circle at 68% 36%, rgba(255, 202, 83, 0.68), transparent 28%);
+  animation: hero-image-glow 7s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.hero-image-wrap:hover .hero-image {
+  animation-play-state: paused;
+  transform: scale(1.12);
+  filter: saturate(1.15) brightness(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, section, section img, .hero-image, .hero-image-glow { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
