@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { 
   Menu, X, ChevronDown, Search, 
   Facebook, Instagram, Twitter, Disc as Pinterest 
 } from 'lucide-react'
+import logo from '../../assets/logo.png'
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -11,16 +13,16 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null)
 
   const navItems = [
-    { name: 'Home', href: '#',  },
-    { name: 'About Us', href: '#',  },
-    { name: 'Our Projects', href: '#', },
-    { name: 'Services', href: '#', links: ['Solar Power Plants', 'Residential', 'Industrial', 'Commercial'] },
-    { name: 'Contact', href: 'https://www.zxsolarenergies.com/Contactus.html' },
+    { name: 'Home', href: '/',  },
+    { name: 'About Us', href: '/about',  },
+    { name: 'Our Projects', href: '/projects', },
+    { name: 'Services', href: '#', links: ['Solar Power Plants', 'Residential', 'Industrial', 'Commercial', 'PM Surya Ghar Mufti Yojana'] },
+    { name: 'Contact', href: '/contact' },
   ]
 
   const socialLinks = [
-    { Icon: Facebook, href: '#', label: 'Facebook' },
-    { Icon: Instagram, href: '#', label: 'Instagram' },
+    { Icon: Facebook, href: 'https://www.facebook.com/profile.php?id=100093988596394', label: 'Facebook' },
+    { Icon: Instagram, href: 'https://www.instagram.com/zxsolar_energies/?hl=en', label: 'Instagram' },
     { Icon: Twitter, href: '#', label: 'Twitter' },
   ]
 
@@ -57,25 +59,28 @@ export default function Navbar() {
                 onMouseEnter={() => item.links && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a 
-                  href={item.href} 
-                  className="flex items-center gap-1 hover:text-[#7cc02b] transition-colors"
-                >
-                  {item.name}
-                  {item.links && <ChevronDown className="w-3.5 h-3.5" />}
-                </a>
+                {!item.links ? (
+                  <Link to={item.href} className="flex items-center gap-1 hover:text-[#7cc02b] transition-colors">
+                    {item.name}
+                  </Link>
+                ) : (
+                  <Link to={item.href} className="flex items-center gap-1 hover:text-[#7cc02b] transition-colors">
+                    {item.name}
+                    {item.links && <ChevronDown className="w-3.5 h-3.5" />}
+                  </Link>
+                )}
 
                 {/* Dropdown Box */}
                 {item.links && activeDropdown === item.name && (
                   <div className="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg border border-gray-100 py-2 capitalize font-medium text-xs text-gray-700 animate-in fade-in slide-in-from-top-2 duration-150">
                     {item.links.map((subLink) => (
-                      <a 
-                        key={subLink} 
-                        href="#" 
+                      <Link
+                        key={subLink}
+                        to={`/services/${subLink.toLowerCase().replaceAll(' ', '-')}`}
                         className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#7cc02b] transition-colors"
                       >
                         {subLink}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -114,13 +119,12 @@ export default function Navbar() {
       {/* 1. Working Search Overlay Modal */}
       {isSearchOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <button 
+          <button
             onClick={() => setIsSearchOpen(false)}
             className="absolute top-6 right-6 text-white hover:text-[#7cc02b] transition-colors"
           >
             <X className="w-8 h-8" />
           </button>
-          
           <form onSubmit={handleSearchSubmit} className="w-full max-w-2xl relative">
             <input 
               type="text"
@@ -153,8 +157,19 @@ export default function Navbar() {
           <div className="relative w-80 max-w-full bg-[#111827] text-white h-full p-6 shadow-2xl flex flex-col justify-between z-10 animate-in slide-in-from-left duration-250">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-gray-800">
-                <span className="text-xl font-bold tracking-wider text-[#7cc02b]">ZXSOLAR</span>
-                <button 
+                <a href="/" className="flex items-center focus:outline-none">
+                <img
+                  src={logo}
+                  alt="ZXSOLAR"
+                  className="
+                    h-16 w-auto object-contain
+                    drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]
+                    hover:drop-shadow-[0_0_12px_rgba(124,192,43,0.7)]
+                    transition-all duration-500
+                  "
+                />
+              </a>
+                              <button 
                   onClick={() => setIsSidebarOpen(false)}
                   className="text-gray-400 hover:text-white"
                 >
@@ -164,13 +179,33 @@ export default function Navbar() {
 
               <div className="mt-6 flex flex-col space-y-4 text-sm font-semibold">
                 {navItems.map((item) => (
-                  <a 
-                    key={item.name} 
-                    href={item.href}
-                    className="hover:text-[#7cc02b] transition-colors py-1"
-                  >
-                    {item.name}
-                  </a>
+                  !item.links ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={() => setIsSidebarOpen(false)}
+                      className="hover:text-[#7cc02b] transition-colors py-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <div
+                      key={item.name}
+                      className="flex flex-col gap-3 py-1"
+                    >
+                      <span className="text-[#7cc02b]">{item.name}</span>
+                      {item.links.map((subLink) => (
+                        <Link
+                          key={subLink}
+                          to={`/services/${subLink.toLowerCase().replaceAll(' ', '-')}`}
+                          onClick={() => setIsSidebarOpen(false)}
+                          className="pl-3 text-sm text-gray-300 hover:text-white"
+                        >
+                          {subLink}
+                        </Link>
+                      ))}
+                    </div>
+                  )
                 ))}
               </div>
             </div>

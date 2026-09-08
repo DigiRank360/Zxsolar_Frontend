@@ -1,4 +1,5 @@
 import React from 'react'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function Testimonials() {
   const reviews = [
@@ -53,9 +54,11 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <button className="mt-12 bg-ecoGreen hover:bg-ecoGreenDark text-white font-bold px-8 py-3.5 rounded-sm text-xs uppercase">
-          View More →
-        </button>
+       {/* <button className="group relative inline-flex items-center mt-12 justify-center gap-3 bg-[#2e7d32] hover:bg-[#246327] text-white font-bold px-8 py-4 shadow-lg shadow-[#2e7d32]/25 hover:shadow-xl hover:shadow-[#2e7d32]/35 transition-all duration-300 text-xs tracking-wider uppercase overflow-hidden">
+          <span className="relative z-10 cursor-pointer">View All Solar Articles</span>
+          <ArrowUpRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <span className="absolute inset-y-0 -left-20 w-16 rotate-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-[110%]" />
+        </button> */}
       </div>
     </section>
   )

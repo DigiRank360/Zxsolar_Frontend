@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .primary-button {
+    @apply inline-flex min-h-[54px] items-center justify-center gap-3 rounded-sm bg-ecoGreen px-7 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-lg shadow-ecoGreen/25 transition-all duration-300 hover:-translate-y-1 hover:bg-ecoGreenDark hover:shadow-xl hover:shadow-ecoGreen/35 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0;
+  }
+}
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1a1c1e;
@@ -31,6 +37,33 @@ html {
 @keyframes hero-image-glow {
   0%, 100% { opacity: 0.2; transform: scale(0.96); }
   50% { opacity: 0.48; transform: scale(1.08); }
+}
+
+@keyframes whatsapp-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7), 0 0 18px rgba(37, 211, 102, 0.55), 0 14px 32px rgba(37, 211, 102, 0.35); }
+  50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 0 32px rgba(37, 211, 102, 0.85), 0 16px 44px rgba(37, 211, 102, 0.6); }
+}
+
+@keyframes chatbot-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.35), 0 0 18px rgba(16, 185, 129, 0.45), 0 16px 34px rgba(2, 44, 34, 0.75); }
+  50% { box-shadow: 0 0 0 13px rgba(52, 211, 153, 0), 0 0 34px rgba(52, 211, 153, 0.8), 0 18px 48px rgba(16, 185, 129, 0.62); }
+}
+
+.chatbot-glow {
+  animation: chatbot-glow 2.2s ease-in-out infinite;
+}
+
+.whatsapp-glow {
+  animation: whatsapp-glow 2s ease-in-out infinite;
+}
+
+@keyframes logo-highlight {
+  0%, 100% { background: rgba(255, 255, 255, 0.05); box-shadow: 0 0 18px rgba(52, 211, 153, 0.25); }
+  50% { background: rgba(255, 255, 255, 0.1); box-shadow: 0 0 32px rgba(251, 191, 36, 0.42), 0 0 48px rgba(52, 211, 153, 0.2); }
+}
+
+.logo-highlight {
+  animation: logo-highlight 2.8s ease-in-out infinite;
 }
 
 section {
@@ -79,5 +112,5 @@ section img:hover {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, section, section img, .hero-image, .hero-image-glow { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *, section, section img, .hero-image, .hero-image-glow, .whatsapp-glow, .chatbot-glow, .logo-highlight { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

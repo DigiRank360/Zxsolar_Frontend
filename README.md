@@ -1,6 +1,6 @@
-# Ecohub - Ecology & Solar Energy React App
+# Zxsolar - Ecology & Solar Energy React App
 
-This is a complete, responsive, production-ready React project designed with Tailwind CSS, matching the Ecohub UI template design.
+This is a complete, responsive, production-ready React project designed with Tailwind CSS, matching the Zxsolar UI template design.
 
 ## Features Included:
 - **Full UI Matching Screenshots**: Header, Navigation, Hero Slider, About, Interactive Service Tabs, Key Stats Counters, Skill Progress Bars, Reviews, Consultancy CTA, and News Grid.
@@ -13,11 +13,11 @@ This is a complete, responsive, production-ready React project designed with Tai
 ## Getting Started
 
 1. **Unzip the downloaded archive**:
-   `ecohub-app.zip`
+   `Zxsolar-app.zip`
 
 2. **Install dependencies**:
    ```bash
-   cd ecohub-app
+   cd Zxsolar-app
    npm install
    ```
 
