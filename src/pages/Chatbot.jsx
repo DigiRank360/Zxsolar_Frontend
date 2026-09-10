@@ -155,7 +155,7 @@ export default function Chatbot() {
               {/* High Contrast Logo Display */}
               <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl  p-2  shadow-md backdrop-blur-md">
                 <img
-                  src={logo}
+                  src="/favicon.png"
                   alt="ZXSOLAR Logo"
                   className="h-full w-full object-contain "
                 />

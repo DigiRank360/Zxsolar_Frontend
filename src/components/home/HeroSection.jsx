@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import {
   ArrowRight,
   Leaf,
@@ -154,7 +155,8 @@ export default function HeroSection() {
 
             {/* Call to Action Buttons */}
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button
+              <Link
+                to="/about"
                 className="
                   group relative inline-flex min-h-[54px]
                   items-center justify-center gap-4
@@ -177,9 +179,9 @@ export default function HeroSection() {
                 </span>
 
                 <span className="absolute inset-y-0 -left-20 w-16 rotate-12 bg-white/20 blur-xl transition-all duration-700 group-hover:left-[110%]" />
-              </button>
-
-              <button
+              </Link>
+              <Link
+                to="/services"
                 className="
                   group inline-flex min-h-[54px]
                   items-center justify-center gap-3
@@ -197,7 +199,7 @@ export default function HeroSection() {
               >
                 Our Services
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </Link>
             </div>
 
             {/* Feature Badges */}

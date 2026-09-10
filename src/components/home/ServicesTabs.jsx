@@ -8,9 +8,10 @@ import {
   Sun, 
   ArrowRight
 } from 'lucide-react'
+import pmImage from '../../assets/pm.png'
 
 export default function ServicesTabs() {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(4)
 
   const tabsData = [
     {
@@ -73,7 +74,7 @@ export default function ServicesTabs() {
       num: '05',
       title: 'PM Surya Ghar Muft Bijli Yojana',
       Icon: Sun,
-      image: 'https://www.zxsolarenergies.com/images/Myphoto/consult1.png',
+      image: pmImage,
       description1: 'Get expert help to understand rooftop solar eligibility, system sizing, subsidy benefits, and the application process under PM Surya Ghar.',
       description2: 'Our team supports you from consultation and documentation to installation, net metering, and getting your home ready to generate solar power.',
       checkpoints: [
@@ -209,15 +210,16 @@ export default function ServicesTabs() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 items-center">
             
             {/* Left Image Showcase */}
-            <div className="lg:col-span-6 relative group overflow-hidden ">
-              <div className="relative h-[320px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden bg-gray-100 ">
-                <img
-                  key={currentContent.image}
-                  src={currentContent.image}
-                  alt={currentContent.title}
-                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1714]/60 via-transparent to-transparent opacity-60" />
+            <div className="lg:col-span-6 relative group overflow-hidden">
+              <div
+                key={currentContent.image}
+                role="img"
+                aria-label={currentContent.title}
+                style={{ backgroundImage: `url("${currentContent.image}")` }}
+                className="relative h-[320px] w-full overflow-hidden bg-gray-100 bg-cover bg-center transition duration-700 ease-out sm:h-[380px] lg:h-[420px] group-hover:scale-[1.02]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1714]/90 via-[#0d1714]/20 to-[#0d1714]/5" />
+                <div className="absolute inset-0 bg-[#0d1714]/10 mix-blend-multiply" />
               </div>
 
               {/* Tag overlay */}
