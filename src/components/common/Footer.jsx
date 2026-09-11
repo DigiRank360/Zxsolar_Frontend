@@ -195,9 +195,9 @@ export default function Footer() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ecoGreen" />
 
                 <span>
-                  Q No:-5, Bhawani town, Narela Sankari, Chhatrapati Nagar, Durgesh Vihar, Ayodhya Nagar
+                  6th Floor-602, Pearls Business Park, Netaji Subhash Place
                   <br />
-                  Bhopal, Madhya Pradesh 462021
+                  Delhi:- 110034
                 </span>
               </li>
 

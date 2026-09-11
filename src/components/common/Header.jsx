@@ -42,7 +42,7 @@ export default function Header() {
           </div>
           <div>
             <p className="font-bold text-[#111827] text-sm">Our Address:</p>
-            <p className="text-gray-500">Bhopal, Madhya Pradesh 462021</p>
+            <p className="text-gray-500">6th Floor-602, Pearls Business Park, Netaji Subhash Place Delhi:- 110034</p>
           </div>
         </div>
       </div>
