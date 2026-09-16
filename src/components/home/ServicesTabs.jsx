@@ -18,7 +18,7 @@ export default function ServicesTabs() {
       num: '01',
       title: 'Solar Power Plants',
       Icon: Sun,
-      image: 'https://www.zxsolarenergies.com/images/photovoltaic-system.jpg',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=85',
       description1: 'Utility-scale solar power plants designed to generate dependable clean electricity for large facilities, institutions, and industrial operations.',
       description2: 'From feasibility and system design to installation, grid integration, and monitoring, our team manages the complete solar project lifecycle.',
       checkpoints: [
@@ -32,7 +32,7 @@ export default function ServicesTabs() {
       num: '02',
       title: 'Residential Solar',
       Icon: Home,
-      image: 'https://www.zxsolarenergies.com/images/test%201.jpg',
+      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1600&q=85',
       description1: 'Customized rooftop solar systems for homes that help reduce monthly electricity bills and create reliable, clean power for everyday needs.',
       description2: 'We assess your roof, consumption, and budget to recommend the right on-grid or hybrid solution with professional installation and support.',
       checkpoints: [
@@ -46,7 +46,7 @@ export default function ServicesTabs() {
       num: '03',
       title: 'Industrial Solar',
       Icon: Factory,
-      image: 'https://www.zxsolarenergies.com/images/card3.jpg',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1600&q=85',
       description1: 'High-capacity solar solutions for factories, warehouses, and industrial units looking to control operating costs and energy demand.',
       description2: 'Our engineering team plans systems around your load profile, available space, safety requirements, and long-term return on investment.',
       checkpoints: [
@@ -60,7 +60,7 @@ export default function ServicesTabs() {
       num: '04',
       title: 'Commercial Solar',
       Icon: Landmark,
-      image: 'https://www.zxsolarenergies.com/images/so%202.jpg',
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=85',
       description1: 'Smart solar systems for offices, shops, schools, hospitals, and commercial properties that want predictable energy savings.',
       description2: 'We deliver a practical end-to-end plan covering design, installation, financing guidance, subsidy support, and net-metering assistance.',
       checkpoints: [
@@ -215,9 +215,17 @@ export default function ServicesTabs() {
                 key={currentContent.image}
                 role="img"
                 aria-label={currentContent.title}
-                style={{ backgroundImage: `url("${currentContent.image}")` }}
                 className="relative h-[320px] w-full overflow-hidden bg-gray-100 bg-cover bg-center transition duration-700 ease-out sm:h-[380px] lg:h-[420px] group-hover:scale-[1.02]"
               >
+                <img
+                  src={currentContent.image}
+                  alt={currentContent.title}
+                  onError={(event) => {
+                    event.currentTarget.onerror = null
+                    event.currentTarget.src = '/about/team.png'
+                  }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d1714]/90 via-[#0d1714]/20 to-[#0d1714]/5" />
                 <div className="absolute inset-0 bg-[#0d1714]/10 mix-blend-multiply" />
               </div>

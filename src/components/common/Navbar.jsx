@@ -5,6 +5,7 @@ import {
   Facebook, Instagram, Twitter, Disc as Pinterest 
 } from 'lucide-react'
 import logo from '../../assets/logo.png'
+import pmImage from '../../assets/pm.png'
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -19,6 +20,14 @@ export default function Navbar() {
     { name: 'Services', href: '#', links: ['Solar Power Plants', 'Residential', 'Industrial', 'Commercial', 'PM Surya Ghar Mufti Yojana'] },
     { name: 'Contact', href: '/contact' },
   ]
+
+  const serviceImages = {
+    'Solar Power Plants': 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=240&q=80',
+    Residential: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=240&q=80',
+    Industrial: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=240&q=80',
+    Commercial: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=240&q=80',
+    'PM Surya Ghar Mufti Yojana': pmImage,
+  }
 
   const socialLinks = [
     { Icon: Facebook, href: 'https://www.facebook.com/profile.php?id=100093988596394', label: 'Facebook' },
@@ -72,14 +81,23 @@ export default function Navbar() {
 
                 {/* Dropdown Box */}
                 {item.links && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 w-48 bg-white shadow-xl rounded-lg border border-gray-100 py-2 capitalize font-medium text-xs text-gray-700 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-full left-0 w-64 rounded-lg border border-gray-100 bg-white py-2 text-xs font-medium text-gray-700 shadow-xl animate-in fade-in slide-in-from-top-2 duration-150">
                     {item.links.map((subLink) => (
                       <Link
                         key={subLink}
                         to={`/services/${subLink.toLowerCase().replaceAll(' ', '-')}`}
-                        className="block px-4 py-2 hover:bg-emerald-50 hover:text-[#7cc02b] transition-colors"
+                        className="flex items-center gap-3 px-4 py-2 hover:bg-emerald-50 hover:text-[#7cc02b] transition-colors"
                       >
-                        {subLink}
+                        <img
+                          src={serviceImages[subLink]}
+                          alt=""
+                          onError={(event) => {
+                            event.currentTarget.onerror = null
+                            event.currentTarget.src = '/about/team.png'
+                          }}
+                          className="h-10 w-12 shrink-0 rounded-md object-cover"
+                        />
+                        <span>{subLink}</span>
                       </Link>
                     ))}
                   </div>

@@ -8,7 +8,7 @@ export default function FeaturesStats() {
       id: 1,
       title: 'Residential Solar',
       subTitle: 'Solar For Homes',
-      image: 'https://www.zxsolarenergies.com/images/test%201.jpg',
+      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=1200&q=85',
       icon: Home,
       description: 'Our solar and ecological services help homes and industries plan cleaner energy systems, improve efficiency, and make confident decisions from consultation to installation.'
     },
@@ -16,7 +16,7 @@ export default function FeaturesStats() {
       id: 2,
       title: 'Commercial Solar',
       subTitle: 'Solar For Businesses',
-      image: 'https://www.zxsolarenergies.com/images/card3.jpg',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85',
       icon: Factory,
       description: 'Track site conditions, energy performance, and project progress with practical monitoring support that keeps every solar installation safe, efficient, and compliant.'
     },
@@ -24,7 +24,7 @@ export default function FeaturesStats() {
       id: 3,
       title: 'Energy Savings',
       subTitle: 'Smarter Solar Power',
-      image: 'https://www.zxsolarenergies.com/images/photovoltaic-system.jpg',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
       icon: BatteryCharging,
       description: 'Reduce electricity costs with right-sized solar systems, energy audits, efficient equipment, and smart recommendations designed around your property and usage.'
     }
@@ -118,6 +118,10 @@ export default function FeaturesStats() {
               <img
                 src={card.image}
                 alt={card.title}
+                onError={(event) => {
+                  event.currentTarget.onerror = null
+                  event.currentTarget.src = '/about/team.png'
+                }}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
 

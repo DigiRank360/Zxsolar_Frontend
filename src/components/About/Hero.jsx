@@ -11,6 +11,7 @@ import {
   TrendingUp, 
   CheckCircle2 
 } from 'lucide-react';
+import teamImage from '../../assets/team/team.png';
 
 const Hero = () => {
   return (
@@ -127,7 +128,7 @@ const Hero = () => {
 
                 {/* Team Image */}
                 <img
-                  src="https://zxsolarenergies.com/assets/img/about/about-hero.jpeg"
+                  src={teamImage}
                   alt="ZX Solar Energies Team"
                   className="hero-image w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
@@ -145,7 +146,7 @@ const Hero = () => {
                       <CheckCircle2 className="w-3.5 h-3.5 text-ecoGreen" />
                       <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider">Expert Leadership</p>
                     </div>
-                    <p className="text-sm font-extrabold text-ecoDark">Engineers & Solar Techs</p>
+                    <p className="text-sm font-extrabold text-ecoDark">Engineers & Solar Technicians</p>
                   </div>
                 </div>
 
