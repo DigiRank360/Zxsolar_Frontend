@@ -6,27 +6,27 @@ const TrustedByIndustry = () => {
   const clientLogos = [
     {
       name: 'Tata Power Solar',
-      logoUrl: 'https://www.zxsolarenergies.com/images/apollo.png',
+      logoUrl: '/brands/tata-power-solar.svg',
     },
     {
       name: 'Adani Solar',
-      logoUrl: 'https://www.zxsolarenergies.com/images/ultra%20solar.png',
+      logoUrl: '/brands/adani-solar.svg',
     },
     {
       name: 'adani-solar',
-      logoUrl: 'https://www.zxsolarenergies.com/images/adani-solar-vector-logo.png',
+      logoUrl: '/brands/adani-solar.svg',
     },
     {
       name: 'JSW',
-      logoUrl: 'https://www.zxsolarenergies.com/images/JSW.png',
+      logoUrl: '/brands/jsw.svg',
     },
     {
       name: 'havells Energies',
-      logoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ21QswLwp0CK6mx2HSkuL8mQEundizr3j7ad5S3YcCzg&s=10', 
+      logoUrl: '/brands/havells.svg',
     },
     {
       name: 'Vikram Solar',
-      logoUrl: 'https://www.zxsolarenergies.com/images/polycab.png',
+      logoUrl: '/brands/vikram-solar.svg',
     },
   ]
 
@@ -92,7 +92,7 @@ const TrustedByIndustry = () => {
                 <img
                   src={client.logoUrl}
                   alt={client.name}
-                  className="max-h-12 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
+                  className="h-12 w-auto max-w-[150px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110"
                   onError={(e) => {
                     e.target.onerror = null
                     e.target.style.display = 'none'

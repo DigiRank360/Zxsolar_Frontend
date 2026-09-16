@@ -31,8 +31,8 @@ export default function Navbar() {
 
   const socialLinks = [
     { Icon: Facebook, href: 'https://www.facebook.com/profile.php?id=100093988596394', label: 'Facebook' },
-    { Icon: Instagram, href: 'https://www.instagram.com/zxsolar_energies/?hl=en', label: 'Instagram' },
-    { Icon: Twitter, href: '#', label: 'Twitter' },
+    { Icon: Instagram, href: 'https://www.instagram.com/zxsolarenergies/?hl=en', label: 'Instagram' },
+    // { Icon: Twitter, href: '#', label: 'Twitter' },
   ]
 
   const handleSearchSubmit = (e) => {

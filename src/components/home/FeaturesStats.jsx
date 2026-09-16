@@ -50,10 +50,10 @@ export default function FeaturesStats() {
           {/* Dynamic Catchy Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] leading-[1.15] tracking-tight">
             We deliver smart solar &{' '}
-            <span className="relative inline-block text-[#2e7d32]">
+            <span className="relative inline-block pb-3 text-[#2e7d32]">
               sustainable energy solutions
               <svg
-                className="absolute -bottom-1 left-0 w-full"
+                className="pointer-events-none absolute -bottom-1 left-0 h-2 w-full"
                 viewBox="0 0 200 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

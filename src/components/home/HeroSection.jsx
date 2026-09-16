@@ -27,7 +27,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0d1714] text-white">
+    <section className="relative w-full overflow-hidden bg-[#14251f] text-white">
       {/* Dynamic Animated Glow Effect */}
       <style>{`
         @keyframes subtleGlow {
@@ -263,9 +263,9 @@ export default function HeroSection() {
           ))}
 
           {/* Image Overlay Gradients */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0d1714] via-[#0d1714]/15 to-transparent lg:from-[#0d1714]/60" />
-          <div className="absolute inset-x-0 bottom-0 z-10 h-[45%] bg-gradient-to-t from-[#09120f]/80 via-[#09120f]/20 to-transparent" />
-          <div className="absolute inset-0 z-10 bg-[#427d48]/[0.07] mix-blend-color" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#14251f] via-[#14251f]/10 to-transparent lg:from-[#14251f]/30" />
+          <div className="absolute inset-x-0 bottom-0 z-10 h-[45%] bg-gradient-to-t from-[#09120f]/45 via-[#09120f]/10 to-transparent" />
+          <div className="absolute inset-0 z-10 bg-[#427d48]/[0.04] mix-blend-color" />
 
           {/* Status Badge */}
           <div className="absolute right-5 top-5 z-20 sm:right-8 sm:top-8">
@@ -286,7 +286,7 @@ export default function HeroSection() {
             className="
               absolute bottom-6 left-5 right-5 z-20
               border border-white/10
-              bg-[#0b1712]/75
+              bg-[#0b1712]/65
               p-5
               shadow-2xl
               backdrop-blur-xl
