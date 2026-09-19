@@ -243,9 +243,9 @@ export default function ProjectsPage() {
               <div className="aspect-video bg-slate-100">
 
                 <img
-                  src="https://www.zxsolarenergies.com/images/Nexamp-construction-1-1.jpg"
+                  src="https://plus.unsplash.com/premium_photo-1682148210747-ad527ef4117b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJlc3QlMjBQcmljZSUyMENoYWxsZW5nZSUyMGluJTIwc29sYXJ8ZW58MHx8MHx8fDA%3D"
                   alt="Solar installation"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
 
               </div>
@@ -275,9 +275,9 @@ export default function ProjectsPage() {
               <div className="aspect-video bg-slate-100">
 
                 <img
-                  src="https://www.zxsolarenergies.com/images/process-4.png"
+                  src="https://images.unsplash.com/photo-1641959166358-6d08825fb88f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fEdyZWF0JTIwU29sYXIlMjBTdGFydHMlMjB3aXRoJTIwUHJlY2lzaW9uJTIwRGVzaWducyUyMGluJTIwc29sYXJ8ZW58MHx8MHx8fDA%3D"
                   alt="Solar design process"
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                 />
 
               </div>
