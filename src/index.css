@@ -24,6 +24,43 @@ html {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-enter {
+  animation: hero-enter 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-slide-pan {
+  from { transform: scale(1.025) translate3d(0, 0.4%, 0); }
+  to { transform: scale(1.085) translate3d(-0.7%, -0.5%, 0); }
+}
+
+.hero-slide-active {
+  animation: hero-slide-pan 5.2s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+
+@keyframes hero-underline-draw {
+  from { stroke-dashoffset: 210; opacity: 0.45; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.hero-title-underline path {
+  stroke-dasharray: 210;
+  animation: hero-underline-draw 900ms 450ms ease-out both;
+}
+
+@keyframes hero-card-enter {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.hero-commitment-card {
+  animation: hero-card-enter 650ms 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes float-soft {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -66,8 +103,50 @@ html {
   animation: logo-highlight 2.8s ease-in-out infinite;
 }
 
-section {
-  animation: rise-in 0.8s ease both;
+.reveal-item {
+  opacity: 0;
+  translate: 0 18px;
+  transition: opacity 650ms cubic-bezier(0.2, 0.7, 0.2, 1), translate 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-item.is-revealed {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.reveal-card {
+  transition: opacity 650ms cubic-bezier(0.2, 0.7, 0.2, 1), translate 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+}
+
+.reveal-card:hover {
+  translate: 0 -4px;
+  box-shadow: 0 18px 40px rgba(15, 35, 25, 0.12);
+}
+
+@keyframes client-marquee {
+  to { transform: translateX(-50%); }
+}
+
+.client-marquee-track {
+  animation: client-marquee 72s linear infinite;
+}
+
+.client-marquee:hover .client-marquee-track,
+.client-marquee:focus-within .client-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes trust-logo-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.trust-logo-track {
+  animation: trust-logo-scroll 34s linear infinite;
+}
+
+.trust-logo-marquee:hover .trust-logo-track {
+  animation-play-state: paused;
 }
 
 section img {
@@ -113,4 +192,9 @@ section img:hover {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, section, section img, .hero-image, .hero-image-glow, .whatsapp-glow, .chatbot-glow, .logo-highlight { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .hero-title-underline path { animation: none; stroke-dashoffset: 0; }
+  .reveal-item { opacity: 1; translate: none; transition: none; }
+  .reveal-card:hover { translate: none; }
+  .client-marquee-track { animation: none; }
+  .trust-logo-track { animation: none; }
 }

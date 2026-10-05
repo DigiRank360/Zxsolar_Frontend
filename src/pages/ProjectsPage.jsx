@@ -15,6 +15,7 @@ import Ranbir from '../assets/ourProjects/Ranbir Ghosh.jpeg'
 import Sunil from '../assets/ourProjects/Sunil Kumar.jpeg'
 import Urmila from '../assets/ourProjects/Urmila Mathur.jpeg'
 import VDPal from '../assets/ourProjects/VD Pal.jpeg'
+import { useQuoteModal } from '../components/common/QuoteModalContext'
 
 
 const projects = [
@@ -94,15 +95,24 @@ const projects = [
 
 
 export default function ProjectsPage() {
+  const { openQuote } = useQuoteModal()
+
   return (
     <div className="bg-[#f7faf7] text-[#17251e]">
 
       {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-[#123426] px-6 py-24 text-white lg:px-16">
+      <section className="relative isolate overflow-hidden bg-[#123426] px-6 py-24 text-white lg:px-16">
 
-        <div className="absolute inset-0 opacity-20 solar-grid" />
+        <img
+          src={Nitin}
+          alt="Rooftop solar panel installation"
+          className="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#0b2118]/95 via-[#0b2118]/80 to-[#0b2118]/40" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b2118]/55 via-transparent to-[#0b2118]/25" />
+        <div aria-hidden="true" className="absolute inset-0 solar-grid opacity-20" />
 
-        <div className="relative mx-auto max-w-7xl">
+        <div className="relative z-10 mx-auto max-w-7xl">
 
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#b5d941]">
             Our projects
@@ -120,20 +130,21 @@ export default function ProjectsPage() {
             rooftops, we turn unused space into dependable power plants.
           </p>
 
-          <a
-            href="#quote"
+          <button
+            type="button"
+            onClick={openQuote}
             className="primary-button mt-8 bg-[#b5d941] text-[#123426] shadow-none hover:bg-white hover:shadow-none"
           >
             Request a Quote
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </button>
 
         </div>
       </section>
 
 
       {/* ================= PROJECTS ================= */}
-      <section className="px-6 py-20 lg:px-16">
+      <section id="client-projects" className="scroll-mt-28 px-6 py-20 lg:px-16">
 
         <div className="mx-auto max-w-7xl">
 

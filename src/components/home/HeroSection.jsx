@@ -41,9 +41,6 @@ export default function HeroSection() {
 
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-10 h-[420px] w-[420px] rounded-full bg-[#3f8f4f]/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-[35%] h-[300px] w-[300px] rounded-full bg-[#d2a64b]/5 blur-[100px]" />
-
         {/* Subtle background grid */}
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -57,7 +54,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative grid min-h-[720px] grid-cols-1 lg:grid-cols-2">
+      <div className="relative grid min-h-[680px] grid-cols-1 lg:grid-cols-2">
         {/* LEFT CONTENT */}
         <div className="relative z-20 flex items-center px-5 py-20 sm:px-8 md:px-12 lg:px-16 xl:px-24">
           {/* Functional Slider Controls */}
@@ -79,7 +76,7 @@ export default function HeroSection() {
 
           <div className="mx-auto w-full max-w-[650px] lg:mx-0">
             {/* Eyebrow badge */}
-            <div className="mb-7 flex items-center gap-3">
+            <div className="hero-enter mb-7 flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#79b965]/20 bg-[#79b965]/10">
                 <Leaf className="h-4 w-4 text-[#87c872]" />
               </span>
@@ -98,7 +95,7 @@ export default function HeroSection() {
               {/* ZXSOLAR Visibility Enhanced (Opacity opacity-15 & gradient effect) */}
               <span
                 aria-hidden="true"
-                className="
+                className="hero-enter [animation-delay:120ms]
                   pointer-events-none absolute
                   -left-1 -top-10
                   select-none whitespace-nowrap
@@ -116,9 +113,9 @@ export default function HeroSection() {
 
               <h1
                 className="
-                  relative max-w-[620px]
+                  hero-enter [animation-delay:150ms] relative max-w-[620px]
                   text-[40px] font-extrabold
-                  leading-[1.05] tracking-[-0.04em]
+                  leading-[1.05] tracking-tight
                   sm:text-[50px]
                   md:text-[58px]
                   xl:text-[68px]
@@ -130,7 +127,7 @@ export default function HeroSection() {
                   <span className="relative inline-block text-[#d4aa51]">
                     future.
                     <svg
-                      className="absolute -bottom-2 left-0 w-full"
+                      className="hero-title-underline absolute -bottom-2 left-0 w-full"
                       viewBox="0 0 200 12"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -147,14 +144,14 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <p className="mt-8 max-w-[540px] text-sm leading-7 text-[#a6b1ac] sm:text-[15px] md:text-base">
-              We deliver professional solar and ecological solutions designed
-              to reduce environmental impact, improve energy efficiency, and
-              create long-term sustainable value.
+            <p className="hero-enter [animation-delay:240ms] mt-8 max-w-[540px] text-sm leading-7 text-[#a6b1ac] sm:text-[15px] md:text-base">
+              Engineering-led rooftop solar for homes, businesses, and industry.
+              From site assessment to installation, we make the move to clean
+              energy straightforward.
             </p>
 
             {/* Call to Action Buttons */}
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="hero-enter [animation-delay:360ms] mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
                 to="/about"
                 className="
@@ -203,7 +200,7 @@ export default function HeroSection() {
             </div>
 
             {/* Feature Badges */}
-            <div className="mt-12 grid max-w-[560px] grid-cols-2 gap-4 border-t border-white/[0.08] pt-7 sm:grid-cols-3">
+            <div className="hero-enter [animation-delay:480ms] mt-12 grid max-w-[560px] grid-cols-2 gap-4 border-t border-white/[0.08] pt-7 sm:grid-cols-3">
               <div>
                 <div className="mb-2 flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-[#78b862]" />
@@ -240,7 +237,7 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT IMAGE SLIDER & GLOW */}
-        <div className="relative min-h-[520px] overflow-hidden lg:min-h-full">
+        <div className="hero-enter [animation-delay:220ms] relative min-h-[520px] overflow-hidden lg:min-h-full">
           {/* Animated Background Glow Layer */}
           <div className="animate-image-glow pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-[#78b862]/20 via-transparent to-[#d4aa51]/20 mix-blend-screen" />
 
@@ -250,12 +247,12 @@ export default function HeroSection() {
               key={index}
               src={src}
               alt={`Solar panel slide ${index + 1}`}
-              className={`
+                className={`
                 absolute inset-0 h-full w-full object-cover object-center
-                transition-all duration-1000 ease-in-out
+                transition-opacity duration-1000 ease-in-out
                 ${
                   currentSlide === index
-                    ? 'opacity-100 scale-100 z-0'
+                    ? 'hero-slide-active opacity-100 z-0'
                     : 'opacity-0 scale-105 z-0 pointer-events-none'
                 }
               `}
@@ -283,7 +280,7 @@ export default function HeroSection() {
 
           {/* Floating Card */}
           <div
-            className="
+            className="hero-commitment-card
               absolute bottom-6 left-5 right-5 z-20
               border border-white/10
               bg-[#0b1712]/65

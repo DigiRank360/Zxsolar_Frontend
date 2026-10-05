@@ -14,7 +14,30 @@ serviceData['pm-surya-ghar-mufti-yojana'][4] = pmImage
 export default function ServicePage({ type }) {
   const [eyebrow, title, intro, Icon, image, benefits, stats] = serviceData[type] || serviceData.residential
   return <div className="bg-[#f7faf7] text-[#17251e]">
-    <section className="relative overflow-hidden bg-[#123426] px-6 py-20 text-white lg:px-16 lg:py-28"><div className="absolute inset-0 opacity-20 solar-grid" /><div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.9fr]"><div><p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#b5d941]"><Icon className="h-4 w-4" /> {eyebrow}</p><h1 className="mt-5 max-w-2xl text-5xl font-extrabold leading-tight sm:text-6xl">{title}</h1><p className="mt-6 max-w-xl text-lg leading-8 text-white/75">{intro}</p><a href="#enquiry" className="primary-button mt-8 bg-[#b5d941] text-[#123426] shadow-none hover:bg-white hover:shadow-none">Start your solar journey <ArrowRight className="h-4 w-4" /></a></div><img src={image} alt={title} onError={(event) => { event.currentTarget.onerror = null; event.currentTarget.src = '/about/team.png' }} className="h-[360px] w-full rounded-[2rem] object-cover shadow-2xl" /></div></section>
+    <section className="relative isolate flex min-h-[600px] items-center overflow-hidden bg-[#10271d] px-6 py-20 text-white lg:min-h-[660px] lg:px-16 lg:py-24">
+      <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url("${image}")` }} />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#081710]/95 via-[#0c2118]/80 to-[#0c2118]/35" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#081710]/65 via-transparent to-[#081710]/20" />
+      <div aria-hidden="true" className="solar-grid absolute inset-0 opacity-[0.08]" />
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1fr_0.65fr]">
+        <div className="max-w-3xl">
+          <p className="inline-flex items-center gap-2 border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#d2ed87] backdrop-blur-sm">
+            <Icon className="h-4 w-4" /> {eyebrow}
+          </p>
+          <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl">{title}</h1>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">{intro}</p>
+          <a href="#enquiry" className="primary-button mt-8 bg-[#b5d941] text-[#123426] shadow-none hover:bg-white hover:shadow-none">Start your solar journey <ArrowRight className="h-4 w-4" /></a>
+        </div>
+        <div className="grid grid-cols-3 border border-white/20 bg-[#0b1a13]/60 p-4 shadow-2xl backdrop-blur-md sm:p-6">
+          {stats.map(([number, label], index) => (
+            <div key={label} className={`px-3 py-2 sm:px-4 ${index > 0 ? 'border-l border-white/20' : ''}`}>
+              <p className="text-xl font-extrabold text-[#d2ed87] sm:text-2xl">{number}</p>
+              <p className="mt-2 text-[10px] leading-4 text-white/70 sm:text-xs">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     <section className="px-6 py-20 lg:px-16"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6eae22]">Why choose Zxsolar</p><h2 className="mt-3 max-w-2xl text-4xl font-extrabold">A solar partner built around your outcome</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">We combine practical engineering, quality components and clear communication at every step.</p><div className="mt-12 grid gap-5 md:grid-cols-3">{benefits.map((benefit) => <article key={benefit} className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"><CheckCircle2 className="h-8 w-8 text-[#6eae22]" /><p className="mt-6 text-xl font-bold">{benefit}</p><p className="mt-3 text-sm leading-6 text-slate-600">A carefully managed step that keeps your project efficient, compliant and ready for reliable generation.</p></article>)}</div><div className="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200 pt-10 md:grid-cols-3">{stats.map(([number, label]) => <div key={label}><p className="text-3xl font-extrabold text-[#6eae22]">{number}</p><p className="mt-2 text-sm text-slate-500">{label}</p></div>)}</div></div></section>
     <section className="bg-white px-6 py-20 lg:px-16"><div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3"><div className="rounded-2xl bg-[#123426] p-7 text-white"><Ruler className="h-8 w-8 text-[#b5d941]" /><h3 className="mt-6 text-2xl font-bold">01. Survey & design</h3><p className="mt-3 leading-7 text-white/70">We study your roof, energy needs and site conditions before recommending the right system.</p></div><div className="rounded-2xl bg-[#edf5e9] p-7"><ShieldCheck className="h-8 w-8 text-[#6eae22]" /><h3 className="mt-6 text-2xl font-bold">02. Install & verify</h3><p className="mt-3 leading-7 text-slate-600">Our trained team installs with safety, quality checks and clean handover as priorities.</p></div><div className="rounded-2xl bg-[#f8f2df] p-7"><Users className="h-8 w-8 text-[#c08b1d]" /><h3 className="mt-6 text-2xl font-bold">03. Support & grow</h3><p className="mt-3 leading-7 text-slate-600">We stay available for monitoring, support and future expansion of your solar journey.</p></div></div></section>
     <section id="enquiry" className="bg-[#edf5e9] px-6 py-20 lg:px-16"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"><div><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6eae22]">Get started</p><h2 className="mt-3 text-4xl font-extrabold">Let’s plan your solar project</h2><p className="mt-5 leading-7 text-slate-600">Share a few details and our experts will get back to you with a practical next step.</p></div><EnquiryForm serviceType={title} /></div></section>

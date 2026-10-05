@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { 
   Check, 
   Factory,
@@ -9,9 +8,11 @@ import {
   ArrowRight
 } from 'lucide-react'
 import pmImage from '../../assets/pm.png'
+import { useQuoteModal } from '../common/QuoteModalContext'
 
 export default function ServicesTabs() {
-  const [activeTab, setActiveTab] = useState(4)
+  const [activeTab, setActiveTab] = useState(0)
+  const { openQuote } = useQuoteModal()
 
   const tabsData = [
     {
@@ -280,10 +281,10 @@ export default function ServicesTabs() {
 
               {/* Action Link */}
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                <Link to="/contact" className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ecoGreen hover:text-ecoGreenDark transition-colors">
+                <button type="button" onClick={openQuote} className="group inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ecoGreen hover:text-ecoGreenDark transition-colors">
                   <span>Get a Solar Quote</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </button>
               </div>
 
             </div>

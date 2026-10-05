@@ -61,7 +61,7 @@ export default function Footer() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-16">
-        <div className="mb-14 grid gap-12 lg:grid-cols-[1.25fr_0.7fr_1fr_1.2fr]">
+        <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.65fr)_minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-8 xl:gap-12">
 
           {/* =========================
               Logo / About
@@ -188,16 +188,27 @@ export default function Footer() {
               Get in touch
             </h3>
 
-            <ul className="space-y-4 text-sm text-white/60">
+            <ul className="min-w-0 space-y-4 text-sm text-white/60">
 
-              {/* Address */}
-              <li className="flex gap-3">
+              {/* Head Office */}
+              <li className="flex min-w-0 items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ecoGreen" />
 
-                <span>
-                  6th Floor-602, Pearls Business Park, Netaji Subhash Place
+                <span className="min-w-0 break-words">
+                  <strong className="font-semibold text-white/80">Head Office</strong>
                   <br />
-                  Delhi:- 110034
+                  Q-05, Bhawani Town, Near Nerala Shankari, Bhopal, Madhya Pradesh 462022
+                </span>
+              </li>
+
+              {/* Branch Office */}
+              <li className="flex min-w-0 items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ecoGreen" />
+
+                <span className="min-w-0 break-words">
+                  <strong className="font-semibold text-white/80">Branch Office</strong>
+                  <br />
+                  602, Pearl Business Park, Netaji Subhash Place, Delhi 110034
                 </span>
               </li>
 

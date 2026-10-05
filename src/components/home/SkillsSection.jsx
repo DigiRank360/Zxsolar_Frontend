@@ -1,120 +1,104 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Sparkles, Award } from 'lucide-react'
+import { ArrowRight, Check, ClipboardCheck, Ruler, Sun } from 'lucide-react'
+import projectImage from '../../assets/ourProjects/VD Pal.jpeg'
+
+const projectStages = [
+  {
+    number: '01',
+    title: 'Site assessment',
+    detail: 'Understand your roof, energy use, and project requirements.',
+    Icon: ClipboardCheck,
+  },
+  {
+    number: '02',
+    title: 'System engineering',
+    detail: 'Plan a right-sized system around your site and usage.',
+    Icon: Ruler,
+  },
+  {
+    number: '03',
+    title: 'Installation & handover',
+    detail: 'Install, verify, and guide you through your solar system.',
+    Icon: Sun,
+  },
+]
 
 export default function SkillsSection() {
-  const skillsData = [
-    {
-      title: 'Energy Saving',
-      percentage: 90,
-      gradient: 'from-[#2e7d32] to-[#4e994d]',
-      shadow: 'shadow-[0_0_12px_rgba(46,125,50,0.3)]',
-    },
-    {
-      title: 'Staff Training',
-      percentage: 95,
-      gradient: 'from-[#d4aa51] to-[#b88e36]',
-      shadow: 'shadow-[0_0_12px_rgba(212,170,81,0.3)]',
-    },
-    {
-      title: 'Translocation',
-      percentage: 80,
-      gradient: 'from-[#111827] to-[#374151]',
-      shadow: 'shadow-[0_0_12px_rgba(17,24,39,0.2)]',
-    },
-  ]
-
   return (
-    <section className="relative py-20 px-6 lg:px-16 max-w-7xl mx-auto font-sans overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-[#2e7d32]/5 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-20 top-1/3 h-80 w-80 rounded-full bg-[#d4aa51]/10 blur-[120px]" />
-
-      <div className="relative z-10 bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl shadow-gray-900/5 border border-gray-100 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* ================= LEFT CONTENT ================= */}
-        <div className="lg:col-span-6 space-y-6">
-          
-          {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2e7d32]/10 border border-[#2e7d32]/20">
-            <Sparkles className="w-3.5 h-3.5 text-[#2e7d32] animate-pulse" />
-            <span className="text-[#2e7d32] text-xs font-bold uppercase tracking-widest">
-              Our Company Skill
-            </span>
+    <section className="bg-[#f4f7f3] px-6 py-20 sm:py-24 lg:px-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <p className="mb-4 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#568b20]">
+              <span className="h-px w-7 bg-[#d4aa51]" /> How we work
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight text-[#17251e] sm:text-4xl lg:text-5xl">
+              Solar expertise, from first survey to system handover.
+            </h2>
           </div>
+          <p className="max-w-md text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+            Practical engineering and a clear process help make every rooftop solar project easier to plan and deliver.
+          </p>
+        </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] leading-[1.15] tracking-tight">
-            We are dedicated to scaling your business with{' '}
-            <span className="relative inline-block text-[#2e7d32]">
-              proven expertise.
-              <svg
-                className="absolute -bottom-1 left-0 w-full"
-                viewBox="0 0 200 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 8C45 2 123 2 197 6"
-                  stroke="#d4aa51"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-          </h2>
-
-          {/* Trust Callout */}
-          <div className="flex items-center gap-3 pt-2 text-xs font-bold text-gray-500">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#d4aa51]/20 text-[#d4aa51]">
-              <Award className="w-4 h-4" />
+        <div className="grid overflow-hidden border border-[#dfe7df] bg-white shadow-[0_24px_60px_rgba(23,37,30,0.08)] lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="group relative min-h-[400px] overflow-hidden bg-[#173728] sm:min-h-[500px]">
+            <img
+              src={projectImage}
+              alt="Customer rooftop solar panel installation"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-[center_35%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1b13]/80 via-transparent to-[#0b1b13]/10" />
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 sm:bottom-7 sm:left-7 sm:right-7">
+              <div className="border-l-2 border-[#b5d941] pl-4 text-white">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#d3e99a]">Installed solar</p>
+                <p className="mt-1 text-sm font-semibold sm:text-base">Residential rooftop system</p>
+              </div>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/25 bg-white/10 text-white backdrop-blur-sm" aria-hidden="true">
+                <Sun className="h-5 w-5" />
+              </span>
             </div>
-            <span>Certified Standards • ISO 14001 Environmental Compliance</span>
           </div>
 
-          {/* CTA Button */}
-          <div className="pt-2">
-            <Link to="/contact" className="group relative inline-flex items-center justify-center gap-3 bg-ecoGreen hover:bg-ecoGreenDark text-white font-bold px-8 py-4 shadow-lg shadow-ecoGreen/25 hover:shadow-xl hover:shadow-ecoGreen/35 transition-all duration-300 text-xs tracking-wider uppercase overflow-hidden">
-              <span className="relative z-10">Contact Us Today</span>
-              <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-              <span className="absolute inset-y-0 -left-20 w-16 rotate-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-[110%]" />
+          <div className="flex flex-col justify-center p-6 sm:p-10 lg:p-12">
+            <div className="mb-8 flex items-start gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#74ba00]/10 text-[#5ca000]">
+                <Check className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#568b20]">Engineering-led delivery</p>
+                <h3 className="mt-2 text-2xl font-extrabold leading-tight text-[#17251e] sm:text-3xl">A clear path to rooftop solar.</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  We guide each project through assessment, system planning, installation, and handover.
+                </p>
+              </div>
+            </div>
+
+            <ol className="divide-y divide-slate-200 border-y border-slate-200">
+              {projectStages.map(({ number, title, detail, Icon }) => (
+                <li key={number} className="group flex gap-4 py-5">
+                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center bg-[#f3f6f2] text-[#568b20] transition-colors duration-300 group-hover:bg-[#74ba00] group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-extrabold tracking-wider text-[#8b9b8d]">{number}</span>
+                      <h4 className="text-sm font-extrabold text-[#17251e]">{title}</h4>
+                    </div>
+                    <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">{detail}</p>
+                  </div>
+                  <ArrowRight className="mt-3 h-4 w-4 shrink-0 text-slate-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#568b20]" />
+                </li>
+              ))}
+            </ol>
+
+            <Link to="/contact" className="primary-button mt-7 w-fit">
+              Plan your solar project <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
-
-        {/* ================= RIGHT PROGRESS BARS ================= */}
-        <div className="lg:col-span-6 space-y-8 lg:pl-4">
-          
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed p-4 rounded-2xl bg-gray-50/80 border border-gray-100">
-            Our mission is to deliver clear, high-quality, and affordable ecological advice and solutions tailored to empower public and corporate infrastructures.
-          </p>
-
-          {/* Progress Bars Container */}
-          <div className="space-y-6 pt-2">
-            {skillsData.map((skill, index) => (
-              <div key={index} className="space-y-2">
-                
-                {/* Skill Label & Percentage */}
-                <div className="flex justify-between items-center text-xs sm:text-sm font-extrabold text-[#111827]">
-                  <span className="tracking-tight">{skill.title}</span>
-                  <span className="px-2.5 py-0.5 rounded-md bg-gray-100 text-[#2e7d32] border border-gray-200">
-                    {skill.percentage}%
-                  </span>
-                </div>
-
-                {/* Progress Bar Track */}
-                <div className="w-full bg-gray-100 h-3 rounded-full p-0.5 overflow-hidden border border-gray-200/60">
-                  <div
-                    className={`bg-gradient-to-r ${skill.gradient} h-full rounded-full transition-all duration-1000 ease-out ${skill.shadow}`}
-                    style={{ width: `${skill.percentage}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
       </div>
     </section>
   )

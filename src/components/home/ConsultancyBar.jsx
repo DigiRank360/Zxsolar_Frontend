@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { PhoneCall, Send, Sparkles } from 'lucide-react'
+import { useQuoteModal } from '../common/QuoteModalContext'
 
 export default function ConsultancyBar() {
+  const { openQuote } = useQuoteModal()
+
   return (
     <section className="relative bg-[#0d1714] text-white py-16 sm:py-20 px-6 lg:px-16 overflow-hidden font-sans border-y border-white/10">
       {/* Background Ambient Glows */}
@@ -40,30 +42,17 @@ export default function ConsultancyBar() {
           </div>
         </div>
 
-        {/* Right Form Controls */}
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto  p-4 sm:p-5  "
-        >
-          <input
-            type="text"
-            placeholder="Your Name..."
-            className="bg-white/10 border border-white/15 px-5 py-3 text-xs sm:text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#2e7d32] focus:bg-white/15 w-full sm:w-60 transition-all duration-300"
-          />
-          <input
-            type="email"
-            placeholder="Your Mail Address..."
-            className="bg-white/10 border border-white/15 px-5 py-3 text-xs sm:text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#2e7d32] focus:bg-white/15 w-full sm:w-60 transition-all duration-300"
-          />
-          <Link
-            to="/contact"
+        <div className="w-full p-4 sm:w-auto sm:p-5">
+          <button
+            type="button"
+            onClick={openQuote}
             className="group relative inline-flex items-center justify-center gap-2 bg-ecoGreen hover:bg-ecoGreenDark text-white font-bold px-8 py-4  text-xs uppercase tracking-wider w-full sm:w-auto whitespace-nowrap shadow-lg shadow-ecoGreen/25 hover:shadow-xl hover:shadow-ecoGreen/35 transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10">Get A Quote Now</span>
             <Send className="w-3.5 h-3 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             <span className="absolute inset-y-0 -left-20 w-16 rotate-12 bg-white/20 blur-md transition-all duration-700 group-hover:left-[110%]" />
-          </Link>
-        </form>
+          </button>
+        </div>
 
       </div>
     </section>

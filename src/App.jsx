@@ -3,26 +3,32 @@ import { BrowserRouter as Router, Routes, Route, Outlet, Navigate, useLocation }
 import Header from './components/common/Header'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
+import ScrollReveal from './components/common/ScrollReveal'
+import { QuoteModalProvider } from './components/common/QuoteModalContext'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ProjectsPage from './pages/ProjectsPage'
 import Contact from './pages/Contact'
 import ServicePage from './pages/ServicePage'
+import ReferralPage from './pages/ReferralPage'
 
 // App.jsx ke andar hi Layout component define kar diya gaya hai
 function SharedLayout() {
   return (
-    <div id="top" className="min-h-screen bg-white font-sans text-gray-900 flex flex-col justify-between relative">
-      <div className="site-frame">
-        <Header />
-        <Navbar />
-        <main>
-          {/* Outlet ki jagah par active page (HomePage ya Contact) render hoga */}
-          <Outlet />
-        </main>
+    <QuoteModalProvider>
+      <div id="top" className="min-h-screen bg-white font-sans text-gray-900 flex flex-col justify-between relative">
+        <div className="site-frame">
+          <Header />
+          <Navbar />
+          <main>
+            <ScrollReveal />
+            {/* Outlet ki jagah par active page (HomePage ya Contact) render hoga */}
+            <Outlet />
+          </main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </QuoteModalProvider>
   )
 }
 
@@ -45,6 +51,7 @@ function AppRoutes() {
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="projects" element={<ProjectsPage />} />
+        <Route path="refer-a-friend" element={<ReferralPage />} />
         <Route path="services" element={<Navigate to="/services/solar-power-plants" replace />} />
         <Route path="news" element={<Navigate to="/projects" replace />} />
         <Route path="services/solar-power-plants" element={<ServicePage type="solar-power-plants" />} />

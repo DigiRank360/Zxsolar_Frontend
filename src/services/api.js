@@ -24,6 +24,13 @@ export function submitQuote(payload) {
   })
 }
 
+export function submitReferral(payload) {
+  return request('/referrals', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  })
+}
+
 export function sendChatMessage(message, history, sessionId) {
   return request('/chat', {
     method: 'POST',

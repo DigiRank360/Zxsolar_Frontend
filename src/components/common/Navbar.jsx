@@ -6,17 +6,20 @@ import {
 } from 'lucide-react'
 import logo from '../../assets/logo.png'
 import pmImage from '../../assets/pm.png'
+import { useQuoteModal } from './QuoteModalContext'
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const { openQuote } = useQuoteModal()
 
   const navItems = [
     { name: 'Home', href: '/',  },
     { name: 'About Us', href: '/about',  },
     { name: 'Our Projects', href: '/projects', },
+    { name: 'Refer & Earn', href: '/refer-a-friend' },
     { name: 'Services', href: '#', links: ['Solar Power Plants', 'Residential', 'Industrial', 'Commercial', 'PM Surya Ghar Mufti Yojana'] },
     { name: 'Contact', href: '/contact' },
   ]
@@ -107,7 +110,14 @@ export default function Navbar() {
           </div>
 
           {/* Right: Cart, Search & Social Icons */}
-          <div className="flex items-center space-x-5">
+          <div className="flex items-center space-x-3 sm:space-x-5">
+            <button
+              type="button"
+              onClick={openQuote}
+              className="inline-flex items-center gap-2 bg-ecoGreen px-3 py-2 text-[10px] font-extrabold uppercase tracking-wider text-white transition hover:bg-ecoGreenDark sm:px-4 sm:text-xs"
+            >
+              Get Quote
+            </button>
             {/* Working Search Icon */}
             <button 
               onClick={() => setIsSearchOpen(true)} 

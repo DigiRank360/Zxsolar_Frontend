@@ -365,26 +365,27 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Bottom Google Map Location Embed */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-ecoDark flex items-center gap-2">
-              <span className="text-ecoGreen">📍</span> Visit Our Regional Office
-            </h3>
-            <span className="text-xs text-gray-500 font-medium">Bhopal, Madhya Pradesh</span>
+        <div className="space-y-5">
+          <div>
+            <h3 className="text-xl font-bold text-ecoDark">Our Offices</h3>
+            <p className="mt-1 text-sm text-gray-500">Visit or contact our teams at either location.</p>
           </div>
 
-          <div className="bg-white p-2 rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-80 w-full">
-            <iframe
-              title="ZXSolar Energies Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.234123456789!2d77.46!3d23.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42702a000001%3A0x123456789abcdef!2sZXSolar+Energies+Private+Limited!5e0!3m2!1sen!2sin!4v1614134824968!3m2!1i1024!2i768"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              className="rounded-2xl"
-            ></iframe>
+          <div className="grid min-w-0 gap-4 sm:gap-5 md:grid-cols-2">
+            <article className="flex min-w-0 items-start gap-3 border border-gray-100 bg-white p-4 shadow-sm sm:gap-4 sm:p-6">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-ecoGreen/10 text-ecoGreen"><MapPin className="h-5 w-5" /></span>
+              <div>
+                <h4 className="font-bold text-ecoDark">Head Office</h4>
+                <address className="mt-2 break-words text-sm not-italic leading-6 text-gray-600">Q-05, Bhawani Town,<br />Near Nerala Shankari,<br />Bhopal, Madhya Pradesh 462022</address>
+              </div>
+            </article>
+            <article className="flex min-w-0 items-start gap-3 border border-gray-100 bg-white p-4 shadow-sm sm:gap-4 sm:p-6">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-ecoGreen/10 text-ecoGreen"><MapPin className="h-5 w-5" /></span>
+              <div>
+                <h4 className="font-bold text-ecoDark">Branch Office</h4>
+                <address className="mt-2 break-words text-sm not-italic leading-6 text-gray-600">602, Pearl Business Park,<br />Netaji Subhash Place,<br />Delhi 110034</address>
+              </div>
+            </article>
           </div>
         </div>
 
