@@ -30,3 +30,14 @@ This is a complete, responsive, production-ready React project designed with Tai
    ```bash
    npm run build
    ```
+
+## Production API configuration
+
+The frontend `.env` sets `VITE_API_URL` to
+`https://api.zxsolarenergies.com/api`, which the production build uses. If the
+backend URL changes, update `VITE_API_URL` in `.env` and rebuild the frontend.
+When building on a hosting provider, set the same `VITE_API_URL` in its build
+environment because local `.env` files may not be included in deployment. Do
+not set it to `localhost`; that would point production visitors to their own
+computer. The backend's `FRONTEND_URL` must be set to the deployed frontend
+origin so the backend accepts browser requests from the site.
